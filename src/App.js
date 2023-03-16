@@ -1,27 +1,37 @@
-import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/topbar/Topbar";
 import "./App.css";
 import Home from "./pages/home/Home";
 import {Entry} from "./pages/entry/Entry.page"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
     return (
-        <Router>
-            <div className="container">
+        <div className="app">
+            <BrowserRouter>
                 <Routes>
-                    <Route
-                        path='/'
-                        element={<Entry/>}
-                    />
-                    <Route
-                        path='/home'
-                        element={<Home/>}
-                    />
+                    <Route path="/">
+                        <Route index element={<Home />} />
+                        <Route path="login" element={<Entry />} />
+                        <Route path="users">
+                            {/*<Route index element={<List />} />*/}
+                            {/*<Route path=":userId" element={<Single />} />*/}
+                            {/*<Route*/}
+                            {/*    path="new"*/}
+                            {/*    element={<New inputs={userInputs} title="Add New User" />}*/}
+                            {/*/>*/}
+                        </Route>
+                        <Route path="products">
+                            {/*<Route index element={<List />} />*/}
+                            {/*<Route path=":productId" element={<Single />} />*/}
+                            {/*<Route*/}
+                            {/*    path="new"*/}
+                            {/*    element={<New inputs={productInputs} title="Add New Product" />}*/}
+                            {/*/>*/}
+                        </Route>
+                    </Route>
                 </Routes>
-            </div>
-        </Router>
+            </BrowserRouter>
+        </div>
     );
 }
 
