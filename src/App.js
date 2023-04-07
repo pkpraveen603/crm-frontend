@@ -1,7 +1,9 @@
 import "./App.css";
 import Home from "./pages/home/Home";
 import {Entry} from "./pages/entry/Entry.page"
+import { productInputs, userInputs } from "./formSource";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import New from "./pages/New/New";
 
 
 function App() {
@@ -15,18 +17,18 @@ function App() {
                         <Route path="users">
                             {/*<Route index element={<List />} />*/}
                             {/*<Route path=":userId" element={<Single />} />*/}
-                            {/*<Route*/}
-                            {/*    path="new"*/}
-                            {/*    element={<New inputs={userInputs} title="Add New User" />}*/}
-                            {/*/>*/}
+                            <Route
+                                path="new"
+                                element={<New inputs={userInputs} title="Add New User" />}
+                            />
                         </Route>
                         <Route path="products">
                             {/*<Route index element={<List />} />*/}
                             {/*<Route path=":productId" element={<Single />} />*/}
-                            {/*<Route*/}
-                            {/*    path="new"*/}
-                            {/*    element={<New inputs={productInputs} title="Add New Product" />}*/}
-                            {/*/>*/}
+                            <Route
+                                path="new"
+                                element={<New inputs={productInputs} title="Add New Product" />}
+                            />
                         </Route>
                     </Route>
                 </Routes>
